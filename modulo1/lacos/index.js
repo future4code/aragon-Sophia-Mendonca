@@ -11,5 +11,3 @@ console.log(valor)
 // a) O código  está simplificando a escrita de um laço em que a condição da continuação está atrelada a um número incrementado.
 // b) console.log(0) (unqualified?)
 
-// Exercícios de escrita de código
-
