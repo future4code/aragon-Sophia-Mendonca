@@ -12,18 +12,49 @@
  */
 
        // Projeto
+       console.log("Seja bem-vinda(o) ao jogo de Black Jack!");
 
-   console.log("seja bem-vindo ao jogo blackjack")
-
-   confirm("deseja iniciar o jogo, sim ou não?")
-
-   confirm("deseja iniciar o jogo, sim ou não?")
-   if(confirm("deseja iniciar o jogo, sim ou não?")) {
-      iniciaJogo();
-   }
-   else {
-      console.log("obrigado por jogar")
-   }
-   function( iniciaJogo () {for(let i=0; i<4; i++) {
-   }
-   ))
+       if (confirm("Você deseja iniciar o jogo, sim ou não?")) {
+          iniciaJogo();
+       }
+       
+       else {
+          console.log("Jogo finalizado, obrigada/o por jogar. Até mais!");
+       }
+       
+       function iniciaJogo() {
+       
+          let cartas = comprarCarta();
+       
+          for (let j = 0; j <= 12; j++) {
+       
+             for (let k = 0; k <= 3; k++) {
+       
+                const cartas = [
+                   { valor: "A" },
+                   { valor: 2 },
+                   { valor: 3 },
+                   { valor: 4 },
+                   { valor: 5 },
+                   { valor: 6 },
+                   { valor: 7 },
+                   { valor: 8 },
+                   { valor: 9 },
+                   { valor: 10 },
+                   { valor: "J" },
+                   { valor: "Q" },
+                   { valor: "K" }
+                ]
+       
+                const naipes = [
+                   { nome: "copas" },
+                   { nome: "espadas" },
+                   { nome: "ouros" },
+                   { nome: "paus" }
+                ]
+       
+                console.log(cartas[j], [k]);
+       
+             }
+          }
+       }
