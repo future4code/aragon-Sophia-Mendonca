@@ -10,19 +10,17 @@ return array.length
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-return array.reverse 
+return array.reverse() 
 }
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  return array.sort
-  
+return array.sort(retornaArrayOrdenado)
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-
-
+  return 
 }
 
 // EXERCÍCIO 05
