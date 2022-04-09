@@ -21,12 +21,24 @@ input {
     width: 500px;
 }
 
+button{
+    display: block;
+    width: 100px;
+    margin: auto;
+    text-align: center;
+}
+
 button:focus {
     color: white;
 }
 
 img {
     width: 100px;
+}
+
+p {
+    width: 100px;
+   
 }
 
 div>p:first-child {
