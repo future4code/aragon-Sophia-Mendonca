@@ -1,0 +1,142 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: pink;
+}
+
+header {
+    text-align: center;
+    background-color: palevioletred;
+
+}
+
+#menu{
+    align-items: center;
+    display: block;
+    font-family: arial;
+}
+
+#menu ul li {
+    display: inline;
+    padding-right:50px;
+}
+
+#menu ul li a {
+    color: #FFF;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+
+#logo {
+    width: 550px;
+    height: 550px;
+    display: block;
+    margin: auto;
+    align-items: center;
+}
+
+#logo-portfolio {
+    animation-iteration-count: infinite;
+}
+
+#foto {
+    border-radius: 60px;
+    width: 500;
+    padding-bottom: 10pxs;
+}
+
+.div-1 {
+    display: flex;
+}
+
+.text-type-1 {
+    color: black;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    line-height: 30px;
+}
+
+.div-2, .inst-ensino {
+    text-align: center;
+    background-color: pink;
+    padding-top: 30px;
+}
+
+.clientes, .inst-ensino, .skills {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: rgb(27, 79, 97);
+}
+
+.logo-empresa {
+    justify-content: center;
+    padding-right: 50px;
+    vertical-align:middle;
+}
+
+.skills {
+    
+    margin-top: 16px;
+    display: inline;
+    padding-right: 7vw;
+    padding-left: 16vw;
+    margin-right: 9vw;
+}
+
+.lista-skills {
+    margin-top: 16px;
+    display: grid;
+    width: auto;
+    grid-template-columns: 50% 50%;
+    font-size: 20px;
+    padding-left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(70, 70, 70)
+}
+
+.instituicoes {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* list-style: none; */
+    padding-bottom: 50px;
+    text-align: start;
+    margin-left: 20px;
+    color: rgb(70, 70, 70);
+
+}
+
+.rodape {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    display: block;
+    text-decoration-line: none;
+    
+}
+.rodape-inline {
+    padding-bottom: 30px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 300px;
+    display: inline;
+}
+
+.redes-sociais {
+    margin-left: 50px;
+}
+
+#botao-topo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-decoration-line: none;
+}
