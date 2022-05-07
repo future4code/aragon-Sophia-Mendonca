@@ -1,11 +1,28 @@
-import React from 'react';
+import React from "react"
+import MusicasPage from "./pages/MusicasPage/Musicas";
+import PlaylistsPage from "./pages/PlaylistsPage/Playlists";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>sophia</h1>
-    </div>
-  );
+export default class App extends React.Component {
+state = {
+  telaAtual: "playlists"
 }
 
-export default App;
+selectPage = () => {
+  switch (this.state.telaAtual) {
+    case "playlists":
+      return <PlaylistsPage />
+    case "musicas":
+      return <MusicasPage />
+    default:
+      return <PlaylistsPage />
+  }
+}
+
+  render(){
+    return (
+      <div>
+        {this.selectPage()}
+      </div>
+    );
+  }
+}
