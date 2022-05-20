@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Header from './components/Header';
-import ProfilesPage from './components/Pages/ProfilesPage'
-import MatchesPage from './components/Pages/MatchesPage'
+import Header from "./components/Header";
+import ProfilesPage from "../src/components/pages/ProfilesPage"
+import MatchesPage from "../src/components/pages/MatchesPage"
+import "./app.css"
 
 function App() {
 
@@ -9,36 +10,36 @@ function App() {
 
   const renderCurrentPage = () => {
     switch (page) {
-      case 'profiles-page':
-        return <ProfilesPage />
-      case 'matches-page':
-        return <MatchesPage />
+      case "profiles-page":
+        return <ProfilesPage/>
+      case "matches-page":
+        return <MatchesPage/>
       default:
-        return <ProfilesPage />
+        return <ProfilesPage/>
+
     }
-  }
+  } 
+    const goToProfilesPage = () => {
+      setPage("profiles-page")
+    }
 
-  const goToProfilesPage = () => {
-    setPage('profiles-page')
-  }
+    const goToMatchesPage = () => {
+      setPage("matches-page")
+    }
 
-  const goToMatchesPage = () => {
-    setPage('matches-page')
-  }
-
-  return (
-    <div>
-      <Header
+    return (
+      <div>
+        <Header
         page={page}
         goToProfilesPage={goToProfilesPage}
         goToMatchesPage={goToMatchesPage}
-      />
-      <hr />
-      <main>
-        {renderCurrentPage()}
-      </main>
-    </div>
-  );
-}
+        />
+        <hr/>
+        <main>
+          {renderCurrentPage()}
+        </main>
+      </div>
+    );
+  }
 
-export default App;
+  export default App;
