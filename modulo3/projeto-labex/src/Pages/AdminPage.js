@@ -1,12 +1,21 @@
-import Header from '../components/Header';
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Header from '../components/Header'
+import {goToHomePage} from '../Routes/coordinator'
 
 function AdminPage() {
+    
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!localStorage.getItem("token")) {
+            goToHomePage(navigate);
+        };
+    }, []);
+
     return (
         <>
-
-            <Header
-                actualPage={"admin-page"}
-            />
+            <Header />
             <hr />
             <main>
                 <section>
