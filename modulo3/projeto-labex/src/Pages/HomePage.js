@@ -1,10 +1,15 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import { goToAdminPage } from '../Routes/coordinator';
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import useRequestData from '../hooks/useRequestData'
+import Header from '../components/Header'
+import TripCard from '../components/TripCard'
+import { goToAdminPage } from '../Routes/coordinator'
+
 
 function HomePage() {
     const navigate = useNavigate();
+
+    const [tripsData] = useRequestData("trips", {});
 
     useEffect(() => {
         if (localStorage.getItem("token")) {
@@ -12,8 +17,18 @@ function HomePage() {
         };
     }, []);
 
+    const tripsList = tripsData.trips ? tripsData.trips.map((trip) => {
+        return (
+            <TripCard
+                key={trip.id}
+                trip={trip}
+            />
+        );
+    }) : (<p>Carregando...</p>)
+
     return (
         <>
+
             <Header />
             <hr />
             <main>
@@ -23,6 +38,7 @@ function HomePage() {
                 <hr />
                 <section>
                     <h2>Lista de Viagens</h2>
+                    {tripsList}
                 </section>
             </main>
         </>
