@@ -1,4 +1,8 @@
+import {useNavigate} from 'react-router-dom'
+import {goToTripDetailsPage} from '../Routes/coordinator'
+
 function TripCard(props) {
+    const navigate = useNavigate();
     const {id, name, description, planet, durationInDays, date} = props.trip;
     
     const token = localStorage.getItem('token');
@@ -22,4 +26,4 @@ function TripCard(props) {
     );
 };
 
-export default TripCard;
+export default TripCard
