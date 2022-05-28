@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react"
-import { API_CLIENT, BASE_URL } from "../components/constants/urls"
+import { BASE_URL, API_CLIENT } from '../components/constants/urls'
 import axios from "axios"
- 
-const useRequestData = (path, initialState) => {
 
+const useRequestData = (path, initialState) => {
     const [data, setData] = useState(initialState);
 
     const getData = () => {
@@ -29,4 +28,4 @@ const useRequestData = (path, initialState) => {
     return [data, getData];
 };
 
-export default useRequestData
+export default useRequestData;

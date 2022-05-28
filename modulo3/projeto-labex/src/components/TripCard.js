@@ -3,11 +3,12 @@ import {goToTripDetailsPage} from '../Routes/coordinator'
 
 function TripCard(props) {
     const navigate = useNavigate();
-    const {id, name, description, planet, durationInDays, date} = props.trip;
-    
+
+    const { id, name, description, planet, durationInDays, date } = props.trip;
+
     const token = localStorage.getItem('token');
 
-    return(
+    return (
         <>
             <p><b>Nome:</b> {name}</p>
             <p><b>Descrição:</b> {description}</p>
@@ -15,15 +16,14 @@ function TripCard(props) {
             <p><b>Duração:</b> {durationInDays}</p>
             <p><b>Data:</b> {date}</p>
 
-            {token && (
+            {token &&
                 <>
-                    <button>Exibir detalhes</button>
+                    <button onClick={() => goToTripDetailsPage(navigate, id)}>Exibir detalhes</button>
                     <button onClick={() => props.removeTrip(id)}>Excluir viagem</button>
-                </>
-            )}
+                </>}
             <hr />
         </>
     );
 };
 
-export default TripCard
+export default TripCard;

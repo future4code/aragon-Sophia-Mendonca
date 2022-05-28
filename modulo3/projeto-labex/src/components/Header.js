@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate} from "react-router-dom"
 import { goToHomePage } from "../Routes/coordinator"
-import { requestLogin } from '../services/request'
+import { requestLogin } from "../services/request"
 
 function Header() {
 
@@ -22,13 +22,11 @@ function Header() {
 
     const login = (event) => {
         event.preventDefault();
-
         requestLogin(email, password, navigate);
     };
 
     const logout = () => {
         localStorage.removeItem("token");
-
         goToHomePage(navigate);
     };
 

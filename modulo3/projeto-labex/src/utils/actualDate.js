@@ -8,7 +8,6 @@ const actualDate = () => {
         `${today.getMonth() + 1}`
         : "0" + (today.getMonth() + 1);
 
-
     const actualDay = today.getDate() > 9 ?
         `${today.getDate()}`
         : "0" + today.getDate();
@@ -16,4 +15,4 @@ const actualDate = () => {
     return actualYear + "-" + actualMonth + "-" + actualDay
 };
 
-export default actualDate
+export default actualDate;

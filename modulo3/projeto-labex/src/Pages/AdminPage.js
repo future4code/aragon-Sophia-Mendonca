@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import useRequestData from '../hooks/useRequestData';
-import useForm from '../hooks/useForm';
-import Header from '../components/Header';
-import TripCard from '../components/TripCard';
-import { goToHomePage } from '../Routes/coordinator';
-import { createTrip, deleteTrip } from '../services/request';
-import actualDate from '../utils/actualDate';
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import useRequestData from '../hooks/useRequestData'
+import useForm from '../hooks/useForm'
+import Header from '../components/Header'
+import TripCard from '../components/TripCard'
+import { goToHomePage } from '../Routes/coordinator'
+import {createTrip, deleteTrip} from '../services/request'
+import actualDate from '../utils/actualDate'
 import {planets} from '../components/constants/planets'
 
 function AdminPage() {
@@ -18,7 +18,7 @@ function AdminPage() {
         if (!localStorage.getItem("token")) {
             goToHomePage(navigate);
         };
-    }, );
+    }, []);
 
 
     const onClickCreate = (event) => {
@@ -56,9 +56,6 @@ function AdminPage() {
                             name={"name"}
                             value={form.name}
                             onChange={onChange}
-                            pattern={"^.{5,}$"}
-                            title={"O nome da viagem deve ter no mínimo 5 caracteres"}
-                            required
                         />
                         <label htmlFor={"planet"}> Planeta: </label>
                         <select
@@ -66,10 +63,8 @@ function AdminPage() {
                             name={"planet"}
                             defaultValue={""}
                             onChange={onChange}
-                            required
                         >
                             <option value={""} disabled>Escolha um Planeta...</option>
-           
                             {planets.map((planet) => {
                                 return <option value={planet} key={planet}>{planet}</option>
                             })}
@@ -82,7 +77,6 @@ function AdminPage() {
                             value={form.date}
                             onChange={onChange}
                             min={actualDate()}
-                            required
                         />
                         <label htmlFor={"description"}> Descrição: </label>
                         <input
@@ -90,9 +84,6 @@ function AdminPage() {
                             name={"description"}
                             value={form.description}
                             onChange={onChange}
-                            pattern={"^.{20,}$"}
-                            title={"O nome deve ter no mínimo 20 caracteres"}
-                            required 
                         />
                         <label htmlFor={"duration"}> Duração &#40;em dias&#41;: </label>
                         <input
@@ -102,7 +93,6 @@ function AdminPage() {
                             value={form.durationInDays}
                             onChange={onChange}
                             min={30}
-                            required
                         />
                         <button type={"submit"}>Criar</button>
                     </form>
