@@ -7,6 +7,7 @@ import TripCard from '../components/TripCard'
 import { goToAdminPage } from '../Routes/coordinator'
 import { sendApplication } from '../services/request'
 import { countries } from '../components/constants/countries'
+import styled from 'styled-components'
 
 function HomePage() {
     const [tripId, setTripId] = useState("");
@@ -92,9 +93,6 @@ function HomePage() {
                             name={"profession"}
                             value={form.profession}
                             onChange={onChange}
-                            pattern={"^.{3,}$"}
-                            title={"A profissão deve ter no mínimo 3 caracteres"}
-                            required
                         />
                         <label htmlFor={"country"}> País de origem: </label>
                         <select
