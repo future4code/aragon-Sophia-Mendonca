@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+    background-color: pink;
+}
+
+header {
+    text-align: center;
+    background-color: rgb(153, 51, 78);
+
+}
+
+button:hover {
+    background-color: red;
+    box-shadow: 0 0 10px black;
+  }
