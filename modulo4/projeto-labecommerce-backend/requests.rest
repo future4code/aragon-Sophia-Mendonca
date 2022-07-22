@@ -1,0 +1,26 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### Endpoit create user
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "email": "sophiamendonca@gmail.com",
+    "password": "sophia"
+}
+
+### Endpoint search users
+GET http://localhost:3003/users
+
+### Endpoint register product
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "Suporte para laptop para mesa, suporte para laptop, suporte para laptop de liga de alumínio compatível com 10-15,6 polegadas MacBook PC-Notebook Tablet",
+    "price": 94.99
+}
+
+### Endpoint search products
+GET http://localhost:3003/products
