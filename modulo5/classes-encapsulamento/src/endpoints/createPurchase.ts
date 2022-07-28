@@ -48,11 +48,11 @@ export const createPurchase = async (req: Request, res: Response) => {
         )
 
         await connection(TABLE_PURCHASES).insert({
-            id: newPurchase.getId,
-            user_id: newPurchase.getUserId,
-            product_id: newPurchase.getProductId,
-            quantity: newPurchase.getQuantity,
-            total_price: newPurchase.getTotalPrice
+            id: newPurchase.getId(),
+            user_id: newPurchase.getUserId(),
+            product_id: newPurchase.getProductId(),
+            quantity: newPurchase.getQuantity(),
+            total_price: newPurchase.getTotalPrice()
         })
 
         res.status(201).send({ message: "Compra registrada", purchase: newPurchase })
