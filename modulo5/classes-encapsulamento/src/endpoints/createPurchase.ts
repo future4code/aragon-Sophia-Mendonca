@@ -41,9 +41,9 @@ export const createPurchase = async (req: Request, res: Response) => {
 
         const newPurchase = new Purchase (
             Date.now().toString(),
-            userId,
-            productId,
-            quantity,
+            userId(),
+            productId(),
+            quantity(),
             product.getPrice() * quantity
         )
 

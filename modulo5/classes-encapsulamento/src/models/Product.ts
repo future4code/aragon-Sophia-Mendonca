@@ -23,7 +23,7 @@ export class Product {
         return this.name
     }
 
-    public getPrice () {
+    public getPrice() {
         return this.price
     }
 
@@ -35,7 +35,7 @@ export class Product {
         this.name = newName
     }
 
-    public setPassword(newPrice: number) {
+    public setPrice(newPrice: number) {
         this.price = newPrice
     }
 }
