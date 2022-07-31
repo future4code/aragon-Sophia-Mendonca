@@ -3,7 +3,7 @@ import { IHobbiesDB, IStudentDB, IStudentsHobbiesDB } from "../../models/Student
 
 export const classrooms: IClassroomDB[] = [
     {
-        id: "1", 
+        id: "1",
         name: "Hosshaku Kempon",
         module: "0"
     },
@@ -94,27 +94,27 @@ export const students: IStudentDB[] = [
 ]
 
 export const hobbies: IHobbiesDB[] = [
-    {id: "1", title: "Estudar budismo"},
-    {id: "2", title: "Jogar Pokemon"},
-    {id: "3", title: "Pesquisar sobre acessibilidade"},
-    {id: "4", title: "Assistir F1"},
-    {id: "5", title: "Escrever críticas de filmes"},
-    {id: "6", title: "Ir ao cinema"},
-    {id: "7", title: "Andar de bicicleta"},
-    {id: "8", title: "Ouvir música"},
-    {id: "9", title: "Ver animes"},
-    {id: "10", title: "Cantar"},
+    { id: "1", title: "Estudar budismo" },
+    { id: "2", title: "Jogar Pokemon" },
+    { id: "3", title: "Pesquisar sobre acessibilidade" },
+    { id: "4", title: "Assistir F1" },
+    { id: "5", title: "Escrever críticas de filmes" },
+    { id: "6", title: "Ir ao cinema" },
+    { id: "7", title: "Andar de bicicleta" },
+    { id: "8", title: "Ouvir música" },
+    { id: "9", title: "Ver animes" },
+    { id: "10", title: "Cantar" },
 ]
 
 export const studentsHobbies: IStudentsHobbiesDB[] = [
-    {student_id: "1", hobby_id: "5"},
-    {student_id: "2", hobby_id: "4"},
-    {student_id: "3", hobby_id: "2"},
-    {student_id: "4", hobby_id: "1"},
-    {student_id: "5", hobby_id: "9"},
-    {student_id: "6", hobby_id: "6"},
-    {student_id: "7", hobby_id: "7"},
-    {student_id: "8", hobby_id: "10"},
-    {student_id: "9", hobby_id: "3"},
-    {student_id: "10", hobby_id: "8"},
+    { student_id: "1", hobby_id: "5" },
+    { student_id: "2", hobby_id: "4" },
+    { student_id: "3", hobby_id: "2" },
+    { student_id: "4", hobby_id: "1" },
+    { student_id: "5", hobby_id: "9" },
+    { student_id: "6", hobby_id: "6" },
+    { student_id: "7", hobby_id: "7" },
+    { student_id: "8", hobby_id: "10" },
+    { student_id: "9", hobby_id: "3" },
+    { student_id: "10", hobby_id: "8" },
 ]

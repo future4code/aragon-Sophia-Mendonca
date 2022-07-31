@@ -1,4 +1,4 @@
-export interface IStudentsHobbiesDB{
+export interface IStudentsHobbiesDB {
     student_id: string,
     hobby_id: string
 }
@@ -24,7 +24,7 @@ export class Student {
         private birthdate: Date,
         private classroomId: null | string,
         private hobbies: string[]
-    ) {}
+    ) { }
 
     getId() {
         return this.id

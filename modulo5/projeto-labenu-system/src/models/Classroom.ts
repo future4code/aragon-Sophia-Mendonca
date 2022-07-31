@@ -1,47 +1,47 @@
-    export interface IClassroomDB {
-        id: string,
-        name: string,
-        module: string
+export interface IClassroomDB {
+    id: string,
+    name: string,
+    module: string
+}
+
+export class Classroom {
+    constructor(
+        private id: string,
+        private name: string,
+        private students: string[],
+        private module: number
+    ) { }
+
+    getId() {
+        return this.id
     }
-    
-    export class Classroom {
-        constructor(
-            private id: string,
-            private name: string,
-            private students: string[],
-            private module: number
-        ) {}
-        
-        getId() {
-            return this.id
-        }
 
-        getName() {
-            return this.name
-        }
+    getName() {
+        return this.name
+    }
 
-        getStudents() {
-            return this.students
-        }
+    getStudents() {
+        return this.students
+    }
 
-        getModule() {
-            return this.module
-        }
+    getModule() {
+        return this.module
+    }
 
-        setId(newId: string) {
-            this.id = newId
-        }
+    setId(newId: string) {
+        this.id = newId
+    }
 
-        setName(newName: string) {
-            this.name = newName
-        }
+    setName(newName: string) {
+        this.name = newName
+    }
 
-        setStudents(newStudents: string[]) {
-            this.students = [...newStudents]
-        }
+    setStudents(newStudents: string[]) {
+        this.students = [...newStudents]
+    }
 
-        setModule(newModule: number) {
-            this.module = newModule
-        }
+    setModule(newModule: number) {
+        this.module = newModule
+    }
 
-    }   
+}   

@@ -1,10 +1,10 @@
 import { Request, Response } from "express"
 
-export const ping = async (req: Request, res: Response) => {
+export const ping = async (request: Request, response: Response) => {
     let errorCode = 400
     try {
-      res.status(200).send({ message: "Pong!" })
+      response.status(200).send({ message: "Pong!" })
     } catch (error) {
-      res.status(errorCode).send({ message: error.message })
+      response.status(errorCode).send({ message: error.message })
     }
 }
