@@ -23,7 +23,7 @@ export class StudentsController {
             const name = request.body.name
             const email = request.body.email
             const birthdate = request.body.birthdate
-            const classroom_id = request.body.classrom_id
+            const classroom_id = request.body.classroom_id
             if (!name || !email || !birthdate || !classroom_id) {
                 throw new Error("Missing parameters.")
             }
@@ -60,26 +60,22 @@ export class StudentsController {
         }
     }
 
-    public async changeStudentClassrooom(request: Request, response: Response) {
+    public async changeStudentClassroom(request: Request, response: Response) {
         let errorCode = 400
         try {
             const id = request.params.id as string
             const classroom_id = request.body.classroom_id as string
-
             if (!id || !classroom_id) {
                 errorCode = 422
                 throw new Error("Missing parameters.")
             }
-
             if (typeof classroom_id !== "string" || typeof id !== "string") {
                 errorCode = 422
                 throw new Error("Invalid typed parameters, must be string.")
             }
-
             const studentDatabase = new StudentDatabase()
-            const StudentClassroomChanged = await studentDatabase.changeStudentClassroom(id, classroom_id)
-            response.status(200).send({ message: "Successfully changed classroom!" })
-
+            await studentDatabase.changeStudentClassroom(id, classroom_id)
+            response.status(200).send({ message: " Classeoom successfully changed!" })
         } catch (error) {
             response.status(errorCode).send({ message: error.message })
         }
@@ -103,7 +99,6 @@ export class StudentsController {
 
             const studentDataBase = new StudentDatabase()
             const studentClassroom = await studentDataBase.getStudentsClassroom(id)
-
             response.status(200).send({ students: studentClassroom })
         } catch (error) {
             response.status(errorCode).send({ message: error.message })

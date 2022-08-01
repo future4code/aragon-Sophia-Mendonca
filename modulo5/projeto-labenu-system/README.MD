@@ -17,6 +17,7 @@ Um sistema que representa o básico de uma organização educacional, e permite 
 - Mudar Turma de Módulo
 - Criar Aluno
 - Buscar estudantes a partir do seu nome
+- Editar estudante de turma
 - Exibir todas as pessoas pertencentes a uma turma
 
 ### Tecnologias utilizadas:

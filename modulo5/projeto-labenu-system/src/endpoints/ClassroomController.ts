@@ -65,7 +65,7 @@ export class ClassroomController extends BaseDatabase {
             console.log(classroom)
             if (!classroomFound) {
                 errorCode = 404
-                throw new Error("Classroom does not exist.")
+                throw new Error("Classroom not exists")
             }
             if (typeof module !== "string") {
                 errorCode = 404
@@ -78,5 +78,5 @@ export class ClassroomController extends BaseDatabase {
             response.status(errorCode).send({ message: error.message })
         }
     }
-
+    
 }

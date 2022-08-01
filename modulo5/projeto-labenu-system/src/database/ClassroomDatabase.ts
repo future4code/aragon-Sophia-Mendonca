@@ -35,5 +35,5 @@ export class ClassroomDatabase extends BaseDatabase {
       .update({ module })
       .where({ id })
   }
-
+  
 }
