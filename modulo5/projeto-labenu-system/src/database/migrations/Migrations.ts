@@ -28,7 +28,8 @@ class Migrations extends BaseDatabase {
     private async createTables() {
         await BaseDatabase.connection.raw(`
         
-        DROP TABLE IF EXISTS ${StudentDatabase.TABLE_STUDENTS_HOBBIES},
+        DROP TABLE IF EXISTS 
+            ${StudentDatabase.TABLE_STUDENTS_HOBBIES},
             ${StudentDatabase.TABLE_STUDENTS},
             ${StudentDatabase.TABLE_HOBBIES},
             ${ClassroomDatabase.TABLE_CLASSROOMS};
@@ -58,7 +59,7 @@ class Migrations extends BaseDatabase {
                     hobby_id VARCHAR(255) NOT NULL,
                     FOREIGN KEY (student_id) REFERENCES ${StudentDatabase.TABLE_STUDENTS}(id),
                     FOREIGN KEY (hobby_id) REFERENCES ${StudentDatabase.TABLE_HOBBIES}(id)
-                );
+            );
         `)
     };
 

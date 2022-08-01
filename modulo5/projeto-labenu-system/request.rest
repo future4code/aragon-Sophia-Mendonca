@@ -1,8 +1,13 @@
 ### Endpoint de teste
 GET http://localhost:3003/ping
 
-### Endpoint - 'Criar Turma'
+### Todas as turmas
+GET http://localhost:3003/classrooms
 
+### Todos os alunos
+GET http://localhost:3003/students
+
+### Endpoint - 'Criar Turma'
 POST http://localhost:3003/classrooms
 Content-Type: application/json
 
@@ -33,8 +38,8 @@ Content-Type: application/json
     "classroomId": null
 }
 
-### Endpoint 5 - 'Buscar estudantes a partir do seu nome'
-GET http://localhost:3003/students
+### Endpoint 5 - "Buscar estudantes a partir do seu nome"
+GET http://localhost:3003/students/1
 
 ### Endpoint 6 - "Editar estudante de turma"
 PUT http://localhost:3003/students/7
@@ -45,5 +50,6 @@ Content-Type: application/json
 }
 
 ### Endpoint 7 - Exibir todas as pessoas pertencentes a uma turma
-GET http://localhost:3003/students/3
+GET http://localhost:3003/students/1
+
 

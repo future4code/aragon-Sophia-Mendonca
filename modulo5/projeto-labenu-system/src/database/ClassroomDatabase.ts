@@ -1,10 +1,15 @@
 import { IClassroomDB } from "../models/Classroom";
 import { BaseDatabase } from "./BaseDatabase";
-import { StudentDatabase } from "./StudentDatabase";
 
 export class ClassroomDatabase extends BaseDatabase {
-
   public static TABLE_CLASSROOMS = "Labe_Classrooms"
+
+  public async getAllClassrooms() {
+    const AllClassrooms = await BaseDatabase
+      .connection(ClassroomDatabase.TABLE_CLASSROOMS)
+      .select()
+    return AllClassrooms
+  }
 
   public async createClassroom(classroom: IClassroomDB) {
     await BaseDatabase
@@ -16,37 +21,19 @@ export class ClassroomDatabase extends BaseDatabase {
       });
   }
 
-  public async getAllClassrooms() {
-    const result = await BaseDatabase
+  public async getActiveClassrooms(id: string) {
+    const findActiveClassrooms = await BaseDatabase
       .connection(ClassroomDatabase.TABLE_CLASSROOMS)
-    return result
-  }
-
-  public async getActiveClassrooms() {
-    await BaseDatabase
-      .connection(ClassroomDatabase.TABLE_CLASSROOMS)
+      .select()
+      .where({ id: id })
+    return findActiveClassrooms
   }
 
   public async changeClassroomModule(id: string, module: string) {
     await BaseDatabase
       .connection(ClassroomDatabase.TABLE_CLASSROOMS)
+      .update({ module })
+      .where({ id })
   }
 
-
-  public async change(id: string, classroom_id: string) {
-    const result = await BaseDatabase
-      .connection(StudentDatabase.TABLE_STUDENTS)
-      .where({ id: id })
-      .update({ classroom_id: classroom_id })
-
-    return result
-  }
-
-  public async verificationClass(id: string) {
-    const findClass = await BaseDatabase
-      .connection(ClassroomDatabase.TABLE_CLASSROOMS)
-      .select()
-      .where({ id: id })
-    return findClass
-  }
 }
