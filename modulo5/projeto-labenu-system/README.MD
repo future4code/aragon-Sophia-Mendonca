@@ -1,7 +1,7 @@
 # Projeto Labenu System
 
-## Autora
-**Sophia Mendonça** - desenvolvedora na *Raia Drogasil RD"), em treinamento pela *Labenu*.
+## Autora:
+**Sophia Mendonça** - desenvolvedora na *Raia Drogasil RD*), em treinamento pela *Labenu*.
 [github](https://github.com/future4code/aragon-Sophia-Mendonca)
 
 ### Descrição:
@@ -9,7 +9,7 @@ Um sistema que representa o básico de uma organização educacional, e permite 
 
 ### Documentação
 [Postman](https://documenter.getpostman.com/view/20786743/Uze1uiws)
-[Heroku](https://sophia-projeto-system.herokuapp.com/)
+[Heroku](https://app-sophia-projeto-system.herokuapp.com/)
 
 ### Funcionalidades
 - Criar Turma
