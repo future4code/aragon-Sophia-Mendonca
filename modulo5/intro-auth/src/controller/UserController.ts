@@ -95,7 +95,7 @@ export class UserController {
 
             if (!email.includes("@")) {
                 errorCode = 400
-                throw new Error("Email must have @.");
+                throw new Error("Email must have @.")
             }
 
             const userDatabase = new UserDatabase()
@@ -186,9 +186,13 @@ export class UserController {
             const authenticator = new Authenticator()
             const payload = authenticator.getTokenPayload(token)
 
-
-            const userDatabase = new UserDatabase()
-            const userDB = await userDatabase.editUser(payload.id, nickname, email, password)
+            const userDatabase = new UserDatabase()      
+            const userDB = await userDatabase.editUser(
+                payload.id,
+                nickname,
+                email,
+                password
+              )
 
             if (typeof nickname !== "string" || nickname.length < 3) {
                 errorCode
@@ -202,19 +206,20 @@ export class UserController {
 
             if (typeof email !== "string" || email.includes("@")) {
                 errorCode = 400
-                throw new Error("Email must have @ and must be a string.");
+                throw new Error("Email must have @ and must be a string");
             }
 
             const checkEmail = await userDatabase.findByEmail(email)
 
             if (checkEmail) {
                 errorCode = 400
-                throw new Error("Email already exists.");
+                throw new Error("Email already exists");
             }
 
             res.status(200).send({
-                message: "updated successfully!",
-                user: userDB
+                message: ("Updated successfully"),
+                user: userDB,
+
             })
         } catch (error) {
             res.status(errorCode).send({ message: error.message })

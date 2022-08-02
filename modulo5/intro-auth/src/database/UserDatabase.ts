@@ -47,10 +47,8 @@ export class UserDatabase extends BaseDatabase {
         const userEdited: IUserDB[] = await BaseDatabase
             .connection(UserDatabase.TABLE_USERS)
             .update("nickname", "email", "password")
-            .where({
-                id: id
-            })
+            .where({ id, nickname, email, password })
 
         return userEdited
-    }
+    } 
 }

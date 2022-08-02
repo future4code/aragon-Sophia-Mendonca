@@ -24,15 +24,20 @@ Content-Type: application/json
 }
 
 ### Exercício 3 - AllUsers
-GET http://localhost:3003/users
+GET http://localhost:3003/users?q=Sophie
+Authorization: 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ3NTA5MjhjLTZiZTgtNDU4OS1hYTBkLTIwNDZhZmUwODcxNiIsImlhdCI6MTY1OTQ0NzE1NiwiZXhwIjoxNjU5NTMzNTU2fQ.-_5iObztSbuzbRfOkhnQEO8_ccVAvKFaRINjvaktOXM
 
 
 ### Exercício 4 - Endpoint protegido de edição de dados do próprio usuário
 PUT http://localhost:3003/users
+Authorization: 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ3NTA5MjhjLTZiZTgtNDU4OS1hYTBkLTIwNDZhZmUwODcxNiIsImlhdCI6MTY1OTQ0NzE1NiwiZXhwIjoxNjU5NTMzNTU2fQ.-_5iObztSbuzbRfOkhnQEO8_ccVAvKFaRINjvaktOXM
 Content-Type: application/json
 
- {
-    "nickname": "Steph",
-    "email": "steph@gmail.com",
-    "password": "Stephanie"
-}
+    {
+        "nickname": "Steph",
+        "email": "stephanie@gmail.com",
+        "password": "stephanie"
+    }
+
