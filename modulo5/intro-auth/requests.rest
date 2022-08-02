@@ -1,0 +1,38 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Exercício 1 - Signup
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+
+    "nickname": "Sophie",
+    "email": "sophia@gmail.com",
+    "password": "sophia"
+
+}
+
+### Exercício 2 - Login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "sophia@gmail.com",
+    "password": "sophia"
+}
+
+### Exercício 3 - AllUsers
+GET http://localhost:3003/users
+
+
+### Exercício 4 - Endpoint protegido de edição de dados do próprio usuário
+PUT http://localhost:3003/users
+Content-Type: application/json
+
+ {
+    "nickname": "Steph",
+    "email": "steph@gmail.com",
+    "password": "Stephanie"
+}
