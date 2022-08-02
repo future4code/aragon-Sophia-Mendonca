@@ -50,5 +50,14 @@ export class UserDatabase extends BaseDatabase {
             .where({ id, nickname, email, password })
 
         return userEdited
-    } 
+    }
+
+    public deleteUser = async (id: string) => {
+        const userCannotDeleted = await BaseDatabase
+        .connection(UserDatabase.TABLE_USERS)
+        .delete()
+        .where({ id })
+    
+        return userCannotDeleted
+      }
 }

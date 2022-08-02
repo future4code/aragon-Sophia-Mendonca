@@ -186,13 +186,13 @@ export class UserController {
             const authenticator = new Authenticator()
             const payload = authenticator.getTokenPayload(token)
 
-            const userDatabase = new UserDatabase()      
+            const userDatabase = new UserDatabase()
             const userDB = await userDatabase.editUser(
                 payload.id,
                 nickname,
                 email,
                 password
-              )
+            )
 
             if (typeof nickname !== "string" || nickname.length < 3) {
                 errorCode
@@ -220,6 +220,42 @@ export class UserController {
                 message: ("Updated successfully"),
                 user: userDB,
 
+            })
+        } catch (error) {
+            res.status(errorCode).send({ message: error.message })
+        }
+    }
+
+    public deleteUser = async (req: Request, res: Response) => {
+        let errorCode = 400
+        try {
+            const id = req.body.id
+            const token = req.headers.authorization
+
+            if (!token) {
+                errorCode = 400
+                throw new Error("Required login")
+            }
+
+            const authenticator = new Authenticator()
+            const payload = authenticator.getTokenPayload(token)
+
+            if (!payload) {
+                errorCode = 400
+                throw new Error("Token invalid")
+            }
+
+            if (payload.id === id) {
+                errorCode = 400
+                throw new Error("You can't delete yourself")
+            }
+
+            const userDatabase = new UserDatabase()
+            const userDB = await userDatabase.deleteUser(id)
+
+            res.status(200).send({
+                message: "Deleted successfully",
+                user: userDB,
             })
         } catch (error) {
             res.status(errorCode).send({ message: error.message })

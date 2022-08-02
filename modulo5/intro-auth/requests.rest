@@ -41,3 +41,8 @@ Content-Type: application/json
         "password": "stephanie"
     }
 
+### Exercício 5 - Delete User
+DELETE http://localhost:3003/users
+Authorization: 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ3NTA5MjhjLTZiZTgtNDU4OS1hYTBkLTIwNDZhZmUwODcxNiIsImlhdCI6MTY1OTQ0NzE1NiwiZXhwIjoxNjU5NTMzNTU2fQ.-_5iObztSbuzbRfOkhnQEO8_ccVAvKFaRINjvaktOXM
+Content-Type: application/json
