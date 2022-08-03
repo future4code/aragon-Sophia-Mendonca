@@ -1,0 +1,39 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Signup
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+    "nickname": "sophie",
+    "email": "sophia@gmail.com",
+    "password": "sophia"
+}
+
+### Login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "sophia@gmail.com",
+    "password": "sophia"
+}
+
+### Get all users (protected)
+GET http://localhost:3003/users?search=
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiY2EyOTFiLWJkZmYtNDEzOS04ZDFhLWJiNzNhOWI1ZTNjMCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk0ODgzOTQsImV4cCI6MTY1OTU3NDc5NH0.V7Y-OfkAEliA4Iiu0bxS7AivnzJJsmpHf0OnarFykNs
+
+### Edit user (protected)
+PUT http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiY2EyOTFiLWJkZmYtNDEzOS04ZDFhLWJiNzNhOWI1ZTNjMCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk0ODgzOTQsImV4cCI6MTY1OTU3NDc5NH0.V7Y-OfkAEliA4Iiu0bxS7AivnzJJsmpHf0OnarFykNs
+Content-Type: application/json
+
+{
+    "nickname": "Soph"
+}
+
+### Delete user (protected)
+DELETE http://localhost:3003/users/bb9b7ee8-ae4b-4bd1-9bd6-e7e21594399b
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiY2EyOTFiLWJkZmYtNDEzOS04ZDFhLWJiNzNhOWI1ZTNjMCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk0ODg3NDgsImV4cCI6MTY1OTU3NTE0OH0.yiWMYOnDA9SJIWDOp0h0iKqu-Dzb37frG-H3huftjkY
