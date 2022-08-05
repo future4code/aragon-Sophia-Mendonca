@@ -1,0 +1,56 @@
+### Endpoint 0 - Teste
+GET http://localhost:3003/ping
+
+### Endpotint 1 - Signup (Cadastro de novo usuário)
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "nickname": "Sophie",
+    "email": "sophia@email.com",
+    "password": "sophia"
+}
+
+### Endpoint 2 - Login (Login do usuário)
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "sophia@email.com",
+    "password": "sophia"
+}
+
+### Endpoint 3 - Create Recipe (Cadastro de receita)
+POST http://localhost:3003/recipes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgwOTczMTQ3LTViOWItNGY4ZS05Y2RjLTIyOTBiNTBhZGU5OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk2MjMyMDYsImV4cCI6MTY1OTcwOTYwNn0.bN8jgkLJlR0xgqKaZOOXBM8gcK4CElMIfhRNXKBZP4c
+Content-Type: application/json
+
+{
+    "title": "Pipoca",
+    "description": "Pipoca com manteiga de cinema"
+
+}
+
+### Endpoint 4 - Edit Recipe (Edição de receita)
+PUT http://localhost:3003/recipes/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3MTUxZmVjLWRiMzItNDE1Zi04ZDhjLTFhZDc0YWQ5ZTg2YSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk1Njg4NzMsImV4cCI6MTY1OTY1NTI3M30.cGjyup3OLkVxRnH6QnY_KwSANBeun6bGmHhGIUa7dVM
+Content-Type: application/json
+
+{
+    "title": "Pipoca doce",
+    "description": "Pipoca doce sabor chocolate"
+}
+
+### - Endpoint 5 - Delete Recipe (Exclusão de Receita)
+DELETE http://localhost:3003/recipes/102
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3MTUxZmVjLWRiMzItNDE1Zi04ZDhjLTFhZDc0YWQ5ZTg2YSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk1Njg4NzMsImV4cCI6MTY1OTY1NTI3M30.cGjyup3OLkVxRnH6QnY_KwSANBeun6bGmHhGIUa7dVM
+
+
+### - Endpoint 6 - Search Recipes (Busca de Receita)
+GET http://localhost:3003/recipes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3MTUxZmVjLWRiMzItNDE1Zi04ZDhjLTFhZDc0YWQ5ZTg2YSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk1NzczOTEsImV4cCI6MTY1OTY2Mzc5MX0.s0IFrye_HlSYt8jfB-if2xQhtN0K0j6bJiscRcav3bE
+
+
+### Endpoint 7 - Delete User (Deletar Usuário)
+DELETE http://localhost:3003/users/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3MTUxZmVjLWRiMzItNDE1Zi04ZDhjLTFhZDc0YWQ5ZTg2YSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk1Njg4NzMsImV4cCI6MTY1OTY1NTI3M30.cGjyup3OLkVxRnH6QnY_KwSANBeun6bGmHhGIUa7dVM
