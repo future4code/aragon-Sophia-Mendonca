@@ -14,7 +14,7 @@ export class UserController {
             const password = request.body.password
 
             if (!nickname || !email || !password) {
-                throw new Error("Missing Parameters")
+                throw new Error("Missing Parameter(s)")
             }
 
             if (typeof nickname !== "string") {
@@ -22,7 +22,7 @@ export class UserController {
             }
 
             if (typeof email !== "string") {
-                throw new Error("The 'email'parameter must be a string")
+                throw new Error("The 'email' parameter must be a string")
             }
 
             if (typeof password !== "string") {
@@ -30,11 +30,11 @@ export class UserController {
             }
 
             if (nickname.length < 3) {
-                throw new Error("The 'nickname' parameter must be at least 3 characters long");
+                throw new Error("The 'nickname' parameter must be at least 3 characters long")
             }
 
             if (password.length < 6) {
-                throw new Error("The 'password' parameter must be at least 6 characters long");
+                throw new Error("The 'password' parameter must be at least 6 characters long")
             }
 
             if (!email.includes("@") || !email.includes(".com")) {
@@ -84,7 +84,6 @@ export class UserController {
             if (!email || !password) {
                 errorCode = 401
                 throw new Error("Missing email or password")
-
             }
 
             if (typeof email !== "string") {
@@ -92,7 +91,7 @@ export class UserController {
             }
 
             if (typeof password !== "string") {
-                throw new Error("The 'password'parameter must be a string")
+                throw new Error("The 'password' parameter must be a string")
             }
 
             if (password.length < 6) {
@@ -104,7 +103,7 @@ export class UserController {
             }
 
             const userDatabase = new UserDatabase()
-            const userDB = await userDatabase.login(email)
+            const userDB = await userDatabase.findByEmail(email)
 
             if (!userDB) {
                 errorCode = 401
@@ -158,7 +157,7 @@ export class UserController {
 
             if (!payload) {
                 errorCode = 401
-                throw new Error("Missing or Wrong Token")
+                throw new Error("Missing or wrong token")
             }
 
             if (payload.role !== USER_ROLES.ADMIN) {
@@ -171,7 +170,7 @@ export class UserController {
 
             if (!isUserExists) {
                 errorCode = 401
-                throw new Error("Wrong Token")
+                throw new Error("Wrong token")
             }
 
             if (id === payload.id) {

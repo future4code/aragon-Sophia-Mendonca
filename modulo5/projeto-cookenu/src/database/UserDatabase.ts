@@ -19,13 +19,13 @@ export class UserDatabase extends BaseDatabase {
             .insert(userDB)
     }
 
-    public login = async (email: string) => {
-        const userLogged: IUserDB[] = await BaseDatabase
+    public findByEmail = async (email: string) => {
+        const emailFound: IUserDB[] = await BaseDatabase
             .connection(UserDatabase.TABLE_USERS)
             .select()
             .where({ email })
 
-        return userLogged[0]
+        return emailFound[0]
     }
 
     public findById = async (id: string) => {

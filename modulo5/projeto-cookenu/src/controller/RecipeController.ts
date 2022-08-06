@@ -1,4 +1,4 @@
-import { Request, response, Response } from "express";
+import { Request, Response } from "express";
 import { RecipeDatabase } from "../database/RecipeDatabase";
 import { Recipe } from "../models/Recipe";
 import { USER_ROLES } from "../models/User";
@@ -6,16 +6,16 @@ import { Authenticator } from "../services/Authenticator";
 import { IdGenerator } from "../services/IdGenerator";
 
 export class RecipeController {
-
     public createRecipe = async (request: Request, response: Response) => {
         let errorCode = 400
         try {
             const token = request.headers.authorization
-            const { title, description } = request.body
+            const title = request.body.title
+            const description = request.body.description
 
             if (!token) {
                 errorCode = 401
-                throw new Error("Missing Token")
+                throw new Error("Missing token")
             }
 
             const authenticator = new Authenticator()
@@ -23,18 +23,23 @@ export class RecipeController {
 
             if (!payload) {
                 errorCode = 401
-                throw new Error("Wrong Token")
+                throw new Error("Wrong token")
             }
 
             if (!title || !description) {
                 errorCode = 422
-                throw new Error("Missing Paramethers")
+                throw new Error("Missing parameter(s)")
 
             }
 
-            if (typeof title !== "string" || typeof description !== "string") {
+            if (typeof title !== "string") {
                 errorCode = 422
-                throw new Error("Parameters must be strings")
+                throw new Error("Thw 'title' parameter must be a string")
+            }
+
+            if (typeof description !== "string") {
+                errorCode = 422
+                throw new Error("Thw 'descriotions' parameter must be a string")
             }
 
             if (title.length < 3) {
@@ -64,7 +69,7 @@ export class RecipeController {
             await recipeDataBase.createRecipe(recipe)
 
             response.status(201).send({
-                message: "Recipe sucessfully reg!stered",
+                message: "Recipe reg!stered sucessfully",
                 recipe
             })
 
@@ -83,7 +88,7 @@ export class RecipeController {
 
             if (!token) {
                 errorCode = 422
-                throw new Error("Missing Token")
+                throw new Error("Missing token")
             }
 
             const authenticator = new Authenticator()
@@ -91,7 +96,7 @@ export class RecipeController {
 
             if (!payload) {
                 errorCode = 401
-                throw new Error("Wrong Token")
+                throw new Error("Wrong token")
             }
 
             if (!title && !description) {
@@ -114,7 +119,7 @@ export class RecipeController {
             }
 
             if (description && description.length < 10) {
-                throw new Error("The 'description' parameter must be at least 3 characters long")
+                throw new Error("The 'description' parameter must be at least 10 characters long")
             }
 
             const recipeDataBase = new RecipeDatabase()
@@ -123,7 +128,7 @@ export class RecipeController {
             if (!receitaDB) {
                 errorCode = 404
                 throw new Error("Unfound recipe")
-            };
+            }
 
             if (payload.role === USER_ROLES.NORMAL) {
                 if (payload.id !== receitaDB.creator_id) {
@@ -160,7 +165,7 @@ export class RecipeController {
 
             if (!token) {
                 errorCode = 422
-                throw new Error("Missing Token")
+                throw new Error("Missing token")
             }
 
             const authenticator = new Authenticator()
@@ -172,15 +177,15 @@ export class RecipeController {
             }
 
             const recipeDataBase = new RecipeDatabase()
-            const receitaDB = await recipeDataBase.findById(id)
+            const recipeDB = await recipeDataBase.findById(id)
 
-            if (!receitaDB) {
+            if (!recipeDB) {
                 errorCode = 404
                 throw new Error("Unfound recipe")
             }
 
             if (payload.role === USER_ROLES.NORMAL) {
-                if (payload.id !== receitaDB.creator_id) {
+                if (payload.id !== recipeDB.creator_id) {
                     errorCode = 403
                     throw new Error("Unauthorized user")
                 }
@@ -204,32 +209,37 @@ export class RecipeController {
             const order = request.query.order as string || "asc"
             const limit = Number(request.query.limit) || 5
             const page = Number(request.query.page) || 1
+            const offset = limit * (page - 1)
+
+            if (!token) {
+                errorCode = 401
+                throw new Error("Missing token")
+            }
+
             const authenticator = new Authenticator()
             const payload = authenticator.getTokenPayload(token)
-            const offset = limit * (page - 1)
 
             if (!payload) {
                 errorCode = 401
-                throw new Error("Wrong Token")
+                throw new Error("Wrong token")
             }
 
             if (typeof search !== "string") {
-                throw new Error("Parâmetro 'search' deve ser uma string")
+                throw new Error("The 'seach' parameter must be a string")
             }
+
             const recipeDatabase = new RecipeDatabase()
             const recipesDB = await recipeDatabase.getAllRecipes(search, sort, order, limit, page, offset)
 
-            const recipes = recipesDB.map((recipe) => {
-                const resultRecipes = {
-                    id: recipe.id,
-                    title: recipe.title,
-                    description: recipe.description,
-                    created_at: recipe.created_at,
-                    updated_at: recipe.updated_at,
-                    creator_id: recipe.creator_id,
-                }
-
-                return resultRecipes
+            const recipes = recipesDB.map((recipeDB) => {
+                return new Recipe(
+                    recipeDB.id,
+                    recipeDB.title,
+                    recipeDB.description,
+                    recipeDB.created_at,
+                    recipeDB.updated_at,
+                    recipeDB.creator_id
+                )
             })
 
             response.status(200).send({ recipes })
@@ -237,4 +247,4 @@ export class RecipeController {
             response.status(errorCode).send({ message: error.message })
         }
     }
-} 
+}
