@@ -1,0 +1,66 @@
+# Projeto Cookenu Backend (agosto/2022)
+
+## Autora: Sophia Mendonça
+Desenvolvedora (*Raia Drogasil RD*, em treinamento pela *Labenu*), youtuber ([*Mundo Autista*](https://www.youtube.com/c/MundoAutista)) e mestre em Comunicação, Territorialidades e Vulnerabilidades (UFMG)
+[Linkedin](https://www.linkedin.com/in/sophia-mendon%C3%A7a-b88550212/)
+
+### Descrição
+**Cookenu** é um sistema de culinária. Ele permite o registro, acesso e manipulação de usuários e receitas.
+
+### Documentação
+[API | Postman](https://documenter.getpostman.com/view/20786743/VUjLMSiT)
+[Deploy | Heroku](https://app-sophia-projeto-cookenu.herokuapp.com/)
+
+### Funcionalidades
+
+- `Endpoint 0 - Ping (Teste da API)`
+Esta requisição é utilizada para testar o funcionamento da API.
+
+- `Endpoint 1 - Signup (Cadastro de usuário)`
+Esta requisição cadastra um novo usuário "NORMAL", o qual retorna um token de acesso ao sistema.
+
+- `Endpoint 2 - Login (Login de usuário)`
+Esta requisição permite o acesso de usuários cadastrados no sistema. Ao final, um token é retornado.
+
+- `Endpoint 3 - Create`Recipe (Cadastro de receita)`
+Esta requisição permite ao usuário logado no sistema criar uma nova receita, a qual é retornada ao final da operação.
+
+- `Endpoint 4 - Edit Recipe (Edição de receita)`
+Esta requisição permite ao usuário logado no sistema alterar uma receita existente. Usuários do tipo “NORMAL” só conseguem alterar as receitas que foram criados por eles mesmos, enquanto usuários do tipo “ADMIN” podem alterar qualquer uma delas. A receita alterada é retornada ao final da operação com a updatedAt atualizada.
+
+- `Endpoint 5 - Delete Recipe (Exclusão de Receita)`
+Esta requisição permite ao usuário logado no sistema remover uma receita pela sua id. Usuários do tipo “NORMAL” só podem remover as receitas que foram criados por eles mesmos, enquanto usuários do tipo “ADMIN” conseguem remover qualquer uma delas.
+
+- `Endpoint 6 - Search Recipes (Busca de Receita)`
+Esta requisição permite ao usuário logado no sistema fazer uma busca na lista de receitas de acordo com o nome do prato que deseja pesquisar.
+
+- `Endpoint 7 - Delete User (Exclusão de Usuário)`
+Esta requisição permite a exclusão de um usuário existente no sistema pelo seu id. Somente usuários do tipo “ADMIN” podem consumir este recurso.
+
+### Instalações utilizadas
+
+-   `npm install`:
+    Instala todas as dependências listadas no `package.json`.
+    
+-   `npm run migrations`
+    Cria e Popula as tabelas, em conexão com o banco de dados.
+
+-   `npm run dev`:
+    Estabelece a conexão com o banco de dados e reinicia automaticamente o servidor `localhost` toda a vez que o projeto for alterado e salvo.
+
+### Tecnologias utilizadas
+- nodeJS
+- express
+- dotenv
+- cors
+- knex
+- TypeScript
+- SQL
+- uuid
+- bcryptjs
+
+### Programas utilizados
+- VSCode e extensão REST Client
+- Beekeeper Studio
+- Postman API Platform
+- Heroku: Cloud Application Platform
