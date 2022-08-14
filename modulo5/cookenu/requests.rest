@@ -1,0 +1,34 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### Signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "nickname": "Sophie",
+    "email": "sophia@gmail.com",
+    "password": "sophia"
+}
+
+### Login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "sophia@gmail.com",
+    "password": "sophia"
+}
+
+### Create Recipe
+POST http://localhost:3003/recipes/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlZThkMGJjLWU2MjktNDczMC1hZTU4LWYwZDE0ZjYxYTQ0MyIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk1Nzg0NTcsImV4cCI6MTY1OTY2NDg1N30.3SpgTtNtT9Jkuz9w_BeDN9t37OaSqVABZ4C3qlyX4Hs
+    "title": "Pipoca",
+    "description": "Pipoca com manteiga de cinema"
+
+}
+
+
+### Get all recipes
+GET http://localhost:3003/recipes
+Authorization: $2a$12$mo8VZKVXoOTrnOYlPNvRZOnliw6kJiVydaEIUiWXUiZL1agfeyYnK
