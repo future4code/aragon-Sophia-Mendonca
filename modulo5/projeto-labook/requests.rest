@@ -1,0 +1,53 @@
+### Endpoint 0 - Ping (Teste da API)
+GET http://localhost:3003/ping
+
+
+### Endpoint 1 - Signup (Cadastro de usuário)
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Sophia",
+    "email": "sophia@gmail.com",
+    "password": "sophiamendonca"
+}
+
+
+### Endpoint 2 - Login (Login de Usuário)
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "sophia@gmail.com",
+    "password": "sophiamendonca"
+}
+
+
+### Endpoint 3 - New Post (Criação de novo post)
+POST http://localhost:3003/posts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1NGMzOTBjLTM1MDktNDdmMC05N2MzLTEyYTVkYmQ0ZGFlMCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA4MTI3ODAsImV4cCI6MTY2MDg5OTE4MH0.xT837qDW-5n6zZkO-ePbQggfvIsH5-A6u--rMWwmEvc
+Content-Type: application/json
+
+{
+    "content": "Hello, word!"
+}
+
+
+### Endpoint 4 - Get All Posts (Retorna todos os posts)
+GET http://localhost:3003/posts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1NGMzOTBjLTM1MDktNDdmMC05N2MzLTEyYTVkYmQ0ZGFlMCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA4MTI3ODAsImV4cCI6MTY2MDg5OTE4MH0.xT837qDW-5n6zZkO-ePbQggfvIsH5-A6u--rMWwmEvc
+
+
+### Endpoint 5 - Delete Post (Deletar post)
+DELETE http://localhost:3003/posts/99f80601-1f48-41d8-88eb-b551ab932f82
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1NGMzOTBjLTM1MDktNDdmMC05N2MzLTEyYTVkYmQ0ZGFlMCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA4MTI3ODAsImV4cCI6MTY2MDg5OTE4MH0.xT837qDW-5n6zZkO-ePbQggfvIsH5-A6u--rMWwmEvc
+
+
+### Endpoint 6 - Like Post (Curtir post)
+POST http://localhost:3003/posts/post/201
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1NGMzOTBjLTM1MDktNDdmMC05N2MzLTEyYTVkYmQ0ZGFlMCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA4MTI3ODAsImV4cCI6MTY2MDg5OTE4MH0.xT837qDW-5n6zZkO-ePbQggfvIsH5-A6u--rMWwmEvc
+
+
+### Endpoint 7 - Deslike Post (Descurtir post)
+DELETE http://localhost:3003/posts/post/201
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1NGMzOTBjLTM1MDktNDdmMC05N2MzLTEyYTVkYmQ0ZGFlMCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA4MTI3ODAsImV4cCI6MTY2MDg5OTE4MH0.xT837qDW-5n6zZkO-ePbQggfvIsH5-A6u--rMWwmEvc
