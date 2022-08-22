@@ -18,7 +18,7 @@ export class User {
         private email: string,
         private password: string,
         private role: USER_ROLES
-    ) {}
+    ) { }
 
     public getId = () => {
         return this.id
@@ -60,3 +60,24 @@ export class User {
         this.role = newRole
     }
 }
+
+export interface ISignupInputDTO {
+    name: string,
+    email: string,
+    password: string
+}
+
+export interface ISignupOutputDTO {
+    message: string,
+    token: string
+}
+
+export interface ILoginInputDTO {
+    email: string,
+    password: string
+}
+
+export interface ILoginOutputDTO {
+    message: string,
+    token: string
+} 
