@@ -1,0 +1,47 @@
+### Endpoint 0 - Teste
+GET http://localhost:3003/ping
+
+### Endpoint 1 - Signup
+
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Sophia",
+    "email": "sophia@gmail.com",
+    "password": "sophiamendonca"
+}
+### Endpoint 2 - Login
+
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "sophia@gmail.com",
+    "password": "sophiamendonca"
+}
+
+### Endpoint 3 - Create show
+POST http://localhost:3003/shows
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MTEzOTUyNywiZXhwIjoxNjYxMjI1OTI3fQ.S1n1-zM14Lcqm1PJzxI3hnLFp6eXp1FGA7tdA93roOg
+Content-Type: application/json
+
+{
+    "band": "The Pierces",
+    "startAt": "2022/12/09"
+}
+
+
+### Endpoint 4 - Get shows
+GET http://localhost:3003/shows
+
+
+### Endpoint 5 - Buy ticket
+POST http://localhost:3003/shows/ticket/172e4ba8-7ba4-46eb-a876-7a1eb028f8b2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDg0ODU3MSwiZXhwIjoxNjYwOTM0OTcxfQ.-nZUeXvhySArpBvRJPGllZOqmaGfzSacl2cIrnCktrg
+Content-Type: application/json
+
+### Endpoint 6 - Delete ticket
+DELETE http://localhost:3003/shows/ticket/301
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDg0ODU3MSwiZXhwIjoxNjYwOTM0OTcxfQ.-nZUeXvhySArpBvRJPGllZOqmaGfzSacl2cIrnCktrg
+Content-Type: application/json
