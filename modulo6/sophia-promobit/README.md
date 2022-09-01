@@ -5,7 +5,7 @@ Desenvolvedora (*Raia Drogasil RD*, treinamento pela *Labenu*), youtuber ([*Mund
 [Linkedin](https://www.linkedin.com/in/sophia-mendon%C3%A7a-b88550212/)
 
 ### Descrição
-O **PROMOBIT** é um projeto front-end. Ele propõe a criação de um site de vídeos com a utilização de uma API gratuita (themoviedb). Dessa forma, exibe uma listagem de filmes e proporcina ao usuário a filtragem por gênero. Assim, há visualização de detalhes sobre um filme, bem como a exibição do trailer dele.
+O **Promobit** é um projeto front-end. Ele propõe a criação de um site de vídeos com a utilização de uma API gratuita (themoviedb). Dessa forma, exibe uma listagem de filmes e proporcina ao usuário a filtragem por gênero. Assim, há visualização de detalhes sobre um filme, bem como a exibição do trailer dele.
 
 ### Documentação
 [API](https://developers.themoviedb.org/3/getting-started/introduction)
