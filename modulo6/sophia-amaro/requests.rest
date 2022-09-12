@@ -1,0 +1,52 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Endpoint 1 - Signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Sophia",
+    "email": "sophia@gmail.com",
+    "password": "sophiamendonca"
+}
+
+
+### Endpoint 2- Login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "sophia@gmail.com",
+    "password": "sophiamendonca"
+}
+
+
+### Endpoint 3 - Get Products
+GET http://localhost:3003/products?search=8360
+
+
+### Endpoint 4 - Search products by Tag
+GET http://localhost:3003/products/tag?search=verao
+
+
+### Endpoint 5 - Get Product
+POST http://localhost:3003/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MTM3MTM2NywiZXhwIjoxNjYxNDU3NzY3fQ.meEblns3OEQCVLdMSujullweM6DpiZEc22PCY8PMN54
+
+{
+    "name": "Vestido canelado"
+}
+
+
+### Endpoint 6 - Add
+POST http://localhost:3003/products/tag/0af4c4b7-37ed-46fa-ac01-089f30d673a1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MTQ2Mzg1OSwiZXhwIjoxNjYxNTUwMjU5fQ.oBqdJTSx4F05ilSvgLqXNir4DY7mmUhLP7-xGvPKkis
+Content-Type: application/json
+
+{
+    "tagName": "Neutro"
+}
+
